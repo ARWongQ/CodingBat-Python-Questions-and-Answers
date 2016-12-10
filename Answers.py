@@ -1,4 +1,9 @@
 #1
+'''
+a= int
+b= int
+negative = boolean
+'''
 def pos_neg(a, b, negative):
   #check if negative
   if(negative):
@@ -18,3 +23,26 @@ def pos_neg(a, b, negative):
       return False
 
 #2
+'''
+str = string
+'''
+def not_string(str):
+  #check if the first 3 letter of the given string is "not"
+  if( str[:3] == "not"):
+    return str
+  #else add "not"
+  else:
+    return "not " + str
+
+  #3
+  '''
+  str = string
+  n = chracter to be removed
+  '''
+  def missing_char(str, n):
+    str_length = len(str)
+    removing = str[n]
+    removed= str.replace(removing,"")
+    return removed
+  
+  
