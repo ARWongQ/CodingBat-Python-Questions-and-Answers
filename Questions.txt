@@ -41,3 +41,47 @@ front3('Java') → 'JavJavJav'
 front3('Chocolate') → 'ChoChoCho'
 front3('abc') → 'abcabcabc'
 
+
+6)
+Given a string and a non-negative int n, return a larger string that is n copies of the original string.
+
+string_times('Hi', 2) → 'HiHi'
+string_times('Hi', 3) → 'HiHiHi'
+string_times('Hi', 1) → 'Hi'
+
+7)
+Given a string and a non-negative int n, we'll say that the front of the string is the first 3 chars, or whatever
+is there if the string is less than length 3. Return n copies of the front;
+
+front_times('Chocolate', 2) → 'ChoCho'
+front_times('Chocolate', 3) → 'ChoChoCho'
+front_times('Abc', 3) → 'AbcAbcAbc'
+
+8)
+Given a string, return a new string made of every other char starting with the first, so "Hello" yields "Hlo".
+
+string_bits('Hello') → 'Hlo'
+string_bits('Hi') → 'H'
+string_bits('Heeololeo') → 'Hello'
+
+
+9)
+Given a non-empty string like "Code" return a string like "CCoCodCode".
+
+string_splosion('Code') → 'CCoCodCode'
+string_splosion('abc') → 'aababc'
+string_splosion('ab') → 'aab'
+
+10)
+Given an array of ints, return the number of 9's in the array.
+
+array_count9([1, 2, 9]) → 1
+array_count9([1, 9, 9]) → 2
+array_count9([1, 9, 9, 3, 9]) → 3
+
+11)
+Given an array of ints, return True if one of the first 4 elements in the array is a 9. The array length may be less than 4.
+
+array_front9([1, 2, 9, 3, 4]) → True
+array_front9([1, 2, 3, 4, 9]) → False
+array_front9([1, 2, 3, 4, 5]) → False
