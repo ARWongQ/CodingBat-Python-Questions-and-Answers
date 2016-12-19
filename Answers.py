@@ -446,5 +446,103 @@ def left2(str):
     combined = rem + beg
 
     return combined
+
+
+#25
+def first_last6(nums):
+  #Get the length of the array
+  length = len(nums)
+  #Check if the beginning or end of the array is 6
+  if(nums[0] == 6 or nums[length-1] == 6):
+    return True
+  return False
+
+#26
+def same_first_last(nums):
+  #Get the length of the array 
+  length = len(nums)
+  #Check if the array is not empty and the beg and end are equal
+  if(length > 0 and nums[0] == nums[length-1]):
+    return True
+  return False
+
+#27
+def make_pi():
+  #Creater and return the array
+  pi = [3,1,4]
+  return pi
+
+#28
+def common_end(a, b):
+  #Get the lengths of the two given arrays
+  length_a = len(a)
+  length_b = len(b)
+  #check if the first or last elements are equal
+  if(a[0] == b[0] or a[length_a-1] == b[length_b-1]):
+    return True
+  return False
+
+#29
+def sum3(nums):
+  #get the lnegth of the array
+  length = len(nums)
+  #Variable to store the sum
+  sum = 0
+  #loop through the whole array and add the numbers to sum
+  for i in range(length):
+    sum += nums[i]
+
+  return sum
+
+#30
+def rotate_left3(nums):
+  #Get the length of the array
+  length = len(nums)
+  #loop length - 1 (to not go off the array)
+  for i in range(length-1):
+    #save the current value
+    temp = nums[i]
+    #swap
+    nums[i] = nums[i+1]
+    #Insert temp
+    nums[i+1] = temp
+
+  return nums
+
+#31
+def reverse3(nums):
+  #get the length of the array
+  length = len(nums)
+  #save the current value
+  temp = nums[0]
+  #swap
+  nums[0] = nums[length-1]
+  #Insert temp
+  nums[length-1] = temp
+  
+  return nums
+
+#32
+#This methodology works from beginning to middle and from end to middle swapping the values (middle won't swap)
+def reverse_array(nums):
+  #Get the length of the array
+  length = len(nums)
+  loop = length//2
+  #loop half the length (to not do unecessary looping) (middle wont change place)
+  for i in range(loop):
+    #save the current value
+    temp = nums[i]
+    #swap
+    nums[i] = nums[length-1]
+    #Insert temp
+    nums[length-1] = temp
+    #reduce length to move from end to middle 
+    length -= 1
     
+  return nums
+
+
+
+
+
 
