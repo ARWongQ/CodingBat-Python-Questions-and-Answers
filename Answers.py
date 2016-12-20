@@ -541,8 +541,188 @@ def reverse_array(nums):
     
   return nums
 
+#33
+def max_end3(nums):
+  #Get the length
+  length = len(nums)
+  #Check which one is greater
+  max_value = max(nums[0],nums[length-1])
+  #loop to change all variables with the max_value
+  for i in range(length):
+    nums[i] = max_value
 
+  return nums
 
+#34
+def sum2(nums):
+  #Get the length
+  length = len(nums)
+  #Variable for iterations 
+  loop = 2
+  sum = 0
+  #If length is smaller than 2, loop length times
+  if(length < 2):
+    loop = length
+  #loop and add the numbers
+  for i in range(loop):
+    sum += nums[i]
 
+  return sum
 
+#35
+def middle_way(a, b):
+  #Get the lengths of a and b
+  length_a = len(a)
+  length_b = len(b)
+  #Get the middle int form a and b
+  mid_a = a[length_a // 2]
+  mid_b = b[length_b // 2]
+  #Set them in an array
+  mid_a_b = [mid_a,mid_b]
+
+  return mid_a_b
+
+#36
+def make_ends(nums):
+  #Get the length
+  length = len(nums)
+  #Get the variables from the beginning and end
+  beg = nums[0]
+  end = nums[length-1]
+  #Set them in an array
+  answer = [beg,end]
+
+  return answer
+
+#37
+def has23(nums):
+  #Get the length
+  length = len(nums)
+  #loop length times
+  for i in range(length):
+    #Check if the array has 2 or 3 
+    if(nums[i] == 2 or nums[i] == 3):
+      return True
+
+  return False
+
+#38
+def cigar_party(cigars, is_weekend):
+  #Check if the cigars are between 40 and 60 and is not a weekend
+  if(cigars >= 40 and cigars <= 60 and (not is_weekend)):
+    return True
+  #Check if it is a weekend and they have more than 40 cigars
+  elif(is_weekend and cigars >= 40):
+    return True
+  else:
+    return False
+  
+#39
+def date_fashion(you, date):
+  #Get the smaller number
+  smaller = min(you,date)
+  #Check if either is equal or greater than 8
+  if(you >= 8 or date >=8):
+    #Check if the smallest is smaller or equal than 2
+    if(smaller <= 2):
+      return 0
+    return 2   
+  #Check if either is less than or equal to 2
+  elif(you <= 2 or date <= 2):
+    return 0
+  else:
+    return 1
+
+#40
+def squirrel_play(temp, is_summer):
+  #Max temperature
+  max = 90
+  #Check if its summer and therefore increase the max temperature
+  if(is_summer == True):
+    max = 100
+   #Check if the temp is between 60 or max
+  if(temp >= 60 and temp <= max):
+    return True
+  else:
+    return False
+
+#41
+def caught_speeding(speed, is_birthday):
+  #Variable depending on your birthday
+  birth_d = 0
+  #Check if it is your birthday if so add 5 to all the speed constrains
+  if(is_birthday == True):
+    birth_d = 5
+  #Check if it is smaller 60 (+5 if birthday)
+  if(speed <= 60+birth_d):
+    return 0
+  #Check if 61 and 80 (+5 if birthday)
+  elif(speed >= 61+birth_d and speed <= 80+birth_d):
+    return 1
+
+  else:
+    return 2
+
+#42
+def sorta_sum(a, b):
+  #Get the sum
+  sum = a + b
+  #Check if the sum is between 10 and 19
+  if(sum >= 10 and sum <= 19):
+    return 20
+  else:
+    return sum
+
+#43
+def alarm_clock(day, vacation):
+  #Variables for each clock time
+  alarm_7 = "7:00"
+  alarm_10 = "10:00"
+  alarm_off = "off"
+  #Check if it is a weekday and is not vacation
+  if(day >= 1 and day <= 5 and not vacation):
+    return alarm_7
+  #Check if it is a weekend and is vacation
+  elif( (day == 0 or day == 6) and vacation):
+    return alarm_off
+  
+  else:
+    return alarm_10
+    
+#44
+def love6(a, b):
+  #Get the sum
+  sum = a+b
+  #Get the difference
+  difference = abs(a - b)
+  #Check if either the numbers, sum or difference is 6
+  if(a == 6 or b == 6 or sum == 6 or difference == 6):
+    return True
+  else:
+    return False
+
+#45
+def in1to10(n, outside_mode):
+  #Check Inside boundaries (False)
+  if(outside_mode == False):
+    if(n >= 1 and n <= 10):
+      return True
+    else:
+      return False
+  else:
+    #Check Outside boundaries (True)
+    if(n <= 1 or n >= 10):
+      return True
+    else:
+      return False
+
+#46
+def near_ten(num):
+  #Get the remainder (Mod)
+  remainder = num % 10
+  #Check if it is within 2
+  if(remainder <= 2 or remainder >= 8):
+    return True
+  else:
+    return False
 
