@@ -449,6 +449,10 @@ def left2(str):
 
 
 #25
+'''
+@parameters
+nums = array of numbers
+'''
 def first_last6(nums):
   #Get the length of the array
   length = len(nums)
@@ -458,6 +462,10 @@ def first_last6(nums):
   return False
 
 #26
+'''
+@parameters
+nums = array of numbers
+'''
 def same_first_last(nums):
   #Get the length of the array 
   length = len(nums)
@@ -473,6 +481,11 @@ def make_pi():
   return pi
 
 #28
+'''
+@parameters
+a = array of numbers
+b = array of numbers
+'''
 def common_end(a, b):
   #Get the lengths of the two given arrays
   length_a = len(a)
@@ -483,6 +496,10 @@ def common_end(a, b):
   return False
 
 #29
+'''
+@parameters
+nums = array of numbers
+'''
 def sum3(nums):
   #get the lnegth of the array
   length = len(nums)
@@ -495,6 +512,10 @@ def sum3(nums):
   return sum
 
 #30
+'''
+@parameters
+nums = array of numbers
+'''
 def rotate_left3(nums):
   #Get the length of the array
   length = len(nums)
@@ -510,6 +531,10 @@ def rotate_left3(nums):
   return nums
 
 #31
+'''
+@parameters
+nums = array of numbers
+'''
 def reverse3(nums):
   #get the length of the array
   length = len(nums)
@@ -523,6 +548,10 @@ def reverse3(nums):
   return nums
 
 #32
+'''
+@parameters
+nums = array of numbers
+'''
 #This methodology works from beginning to middle and from end to middle swapping the values (middle won't swap)
 def reverse_array(nums):
   #Get the length of the array
@@ -542,6 +571,10 @@ def reverse_array(nums):
   return nums
 
 #33
+'''
+@parameters
+nums = array of numbers
+'''
 def max_end3(nums):
   #Get the length
   length = len(nums)
@@ -554,6 +587,10 @@ def max_end3(nums):
   return nums
 
 #34
+'''
+@parameters
+nums = array of numbers
+'''
 def sum2(nums):
   #Get the length
   length = len(nums)
@@ -570,6 +607,11 @@ def sum2(nums):
   return sum
 
 #35
+'''
+@parameters
+a = array of numbers
+b = array of numbers
+'''
 def middle_way(a, b):
   #Get the lengths of a and b
   length_a = len(a)
@@ -583,6 +625,10 @@ def middle_way(a, b):
   return mid_a_b
 
 #36
+'''
+@parameters
+nums = array of numbers
+'''
 def make_ends(nums):
   #Get the length
   length = len(nums)
@@ -595,6 +641,10 @@ def make_ends(nums):
   return answer
 
 #37
+'''
+@parameters
+nums = array of numbers
+'''
 def has23(nums):
   #Get the length
   length = len(nums)
@@ -607,6 +657,11 @@ def has23(nums):
   return False
 
 #38
+'''
+@parameters
+cigars = number of cigars (int)
+is_weekend = boolean
+'''
 def cigar_party(cigars, is_weekend):
   #Check if the cigars are between 40 and 60 and is not a weekend
   if(cigars >= 40 and cigars <= 60 and (not is_weekend)):
@@ -618,6 +673,11 @@ def cigar_party(cigars, is_weekend):
     return False
   
 #39
+'''
+@parameters
+you = your fashion (int)
+date = your date's fahion (int)
+'''
 def date_fashion(you, date):
   #Get the smaller number
   smaller = min(you,date)
@@ -634,6 +694,11 @@ def date_fashion(you, date):
     return 1
 
 #40
+'''
+@parameters
+temp = current temperature (int)
+is_summer = boolean
+'''
 def squirrel_play(temp, is_summer):
   #Max temperature
   max = 90
@@ -647,6 +712,11 @@ def squirrel_play(temp, is_summer):
     return False
 
 #41
+'''
+@parameters
+speed = yoru current driving speed (int)
+is_birthday = boolean
+'''
 def caught_speeding(speed, is_birthday):
   #Variable depending on your birthday
   birth_d = 0
@@ -664,6 +734,11 @@ def caught_speeding(speed, is_birthday):
     return 2
 
 #42
+'''
+@parameters
+a = int
+b = int
+'''
 def sorta_sum(a, b):
   #Get the sum
   sum = a + b
@@ -674,6 +749,11 @@ def sorta_sum(a, b):
     return sum
 
 #43
+'''
+@parameters
+day = the day as (int)
+vacation = boolean
+'''
 def alarm_clock(day, vacation):
   #Variables for each clock time
   alarm_7 = "7:00"
@@ -690,6 +770,11 @@ def alarm_clock(day, vacation):
     return alarm_10
     
 #44
+'''
+@parameters
+a = int
+b = int
+'''
 def love6(a, b):
   #Get the sum
   sum = a+b
@@ -702,6 +787,11 @@ def love6(a, b):
     return False
 
 #45
+'''
+@parameters
+n = int
+outside_mode = boolean
+'''
 def in1to10(n, outside_mode):
   #Check Inside boundaries (False)
   if(outside_mode == False):
@@ -717,6 +807,10 @@ def in1to10(n, outside_mode):
       return False
 
 #46
+'''
+@parameters
+num = int
+'''
 def near_ten(num):
   #Get the remainder (Mod)
   remainder = num % 10
@@ -725,4 +819,109 @@ def near_ten(num):
     return True
   else:
     return False
+
+  
+#47
+#O(n+m) 
+#Greedy algorithm
+'''
+@parameters
+small = number of small bricks (int)
+big = number of big bricks (int)
+goal = desired length (int)
+'''
+def make_bricks(small,big,goal):
+  #size
+  big_size = 5
+  small_size = 1
+  #loop to subtract big bricks until found the answer or until they don't fit
+  for i in range(big):
+    #Subtract from the goal
+    goal = goal - big_size
+    
+    #If possible return True
+    if(goal == 0):
+      return True
+
+    #If they don't fit anymore break the loop and add back to the goal
+    elif(goal < 0):
+      goal = goal + big_size
+      break
+
+  #loop to subtrat small bricks
+  for i in range(small):
+    goal = goal - small_size
+
+    #If possible return true
+    if(goal == 0):
+      return True
+
+  return False
+
+#47.2
+'''
+@parameters
+small = number of small bricks (int)
+big = number of big bricks (int)
+goal = desired length (int)
+'''
+def make_bricks_2(small,big,goal):
+  #big bricks size
+  big_size = 5
+  #check if the goal is possible with all the given bricks
+  #check if you hve enough small blocks to make the desired length
+  if( (goal > big * big_size + small) or (goal % big_size > small)):
+    #not possible return False
+    return False
+  #if possible return True
+  return True
+
+#48
+'''
+@parameters
+a = int
+b = int
+c = int
+'''
+def lone_sum(a, b, c):
+  sum = a+b+c
+  if(a == b and a==c):
+    return 0
+    
+  elif(a == b):
+    return c
+    
+  elif(a == c):
+    return b
+    
+  elif(b == c):
+    return a
+    
+  return sum
+
+#49
+'''
+@parameters
+a = int
+b = int
+c = int
+'''
+def lucky_sum(a, b, c):
+
+  if(a == 13):
+      return 0
+    
+  elif(b == 13):
+  
+    return a
+    
+  elif( c == 13):
+    return a+b
+    
+  else:
+    return a+b+c
+
+
+
+
 
